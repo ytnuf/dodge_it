@@ -14,6 +14,14 @@ config/name="Dodge It!"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_height=640
+
+[physics]
+
+common/physics_ticks_per_second=64
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
