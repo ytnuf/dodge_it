@@ -1,2 +1,13 @@
+
 # Godot 4+ specific ignores
 .godot/
+
+#Hidden files
+.*
+!.gitignore
+!.gitmodules
+!.gitattributes
+
+#Tempory files
+tmp/
+*~
