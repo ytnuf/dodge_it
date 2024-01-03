@@ -6,5 +6,5 @@ extends RigidBody2D
 @export var init_vel := Vector2(32, 32)
 
 
-func _ready() -> void:
+func activate() -> void:
 	linear_velocity = init_vel
