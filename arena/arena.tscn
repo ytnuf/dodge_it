@@ -34,3 +34,16 @@ shape = SubResource("RectangleShape2D_rvd6e")
 
 [node name="Player" parent="." instance=ExtResource("1_abqlm")]
 position = Vector2(576, 320)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="TopLeftSpawnMarker" type="Marker2D" parent="."]
+position = Vector2(128, 128)
+
+[node name="BottomRightSpawnMarker" type="Marker2D" parent="."]
+position = Vector2(1024, 512)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
