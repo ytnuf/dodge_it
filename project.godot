@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 
 window/size/viewport_height=640
 
+[filesystem]
+
+import/blender/enabled=false
+
 [layer_names]
 
 2d_physics/layer_1="_"
