@@ -4,38 +4,38 @@
 [ext_resource type="Script" path="res://arena/arena.gd" id="1_y3n6r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ih4i"]
-size = Vector2(1152, 128)
+size = Vector2(1664, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvd6e"]
-size = Vector2(128, 896)
+size = Vector2(128, 992)
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_y3n6r")
-metadata/_edit_vertical_guides_ = [1024.0]
-metadata/_edit_horizontal_guides_ = [768.0]
+metadata/_edit_vertical_guides_ = [1536.0]
+metadata/_edit_horizontal_guides_ = [864.0]
 
 [node name="Wall" type="StaticBody2D" parent="."]
 collision_layer = 4
 collision_mask = 0
 
 [node name="UpperRect" type="CollisionShape2D" parent="Wall"]
-position = Vector2(512, -64)
+position = Vector2(768, -64)
 shape = SubResource("RectangleShape2D_8ih4i")
 
 [node name="LowerRect" type="CollisionShape2D" parent="Wall"]
-position = Vector2(512, 832)
+position = Vector2(768, 928)
 shape = SubResource("RectangleShape2D_8ih4i")
 
 [node name="LeftRect" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-64, 384)
+position = Vector2(-64, 432)
 shape = SubResource("RectangleShape2D_rvd6e")
 
 [node name="RightRect" type="CollisionShape2D" parent="Wall"]
-position = Vector2(1088, 384)
+position = Vector2(1600, 432)
 shape = SubResource("RectangleShape2D_rvd6e")
 
 [node name="Player" parent="." instance=ExtResource("1_abqlm")]
-position = Vector2(512, 384)
+position = Vector2(768, 432)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -46,6 +46,6 @@ autostart = true
 position = Vector2(128, 128)
 
 [node name="BottomRightSpawnMarker" type="Marker2D" parent="."]
-position = Vector2(896, 640)
+position = Vector2(1408, 736)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
