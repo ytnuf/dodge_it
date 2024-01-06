@@ -48,4 +48,5 @@ position = Vector2(128, 128)
 [node name="BottomRightSpawnMarker" type="Marker2D" parent="."]
 position = Vector2(1408, 736)
 
+[connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

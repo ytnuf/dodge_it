@@ -28,3 +28,7 @@ func _on_timer_timeout() -> void:
 	enemy.rel_size = randf_range(0.5, 2.0)
 
 	_enemies.add_child(enemy)
+
+
+func _on_player_died() -> void:
+	get_tree().paused = true
