@@ -2,9 +2,11 @@
 extends Node2D
 
 
+var _elapsed := 0.0
 @onready var _bottom_right : Vector2 = $BottomRight.position
 @onready var _enemies := $Enemies
 @onready var _player : Player = $Player
+@onready var _time_label := $HUDCanvasLayer/HUD/HBoxContainer/Left/VBoxContainer/TimeLabel
 @onready var _top_left : Vector2 = $TopLeft.position
 
 
@@ -13,6 +15,11 @@ func _ready() -> void:
 	_player.arena_left = _top_left.x
 	_player.arena_right = _bottom_right.x
 	_player.arena_top = _top_left.y
+
+
+func _physics_process(dt: float) -> void:
+	_elapsed += dt
+	_time_label.text = "TIME:\n %d" % _elapsed
 
 
 func _on_timer_timeout() -> void:

@@ -48,5 +48,76 @@ position = Vector2(256, 0)
 [node name="BottomRight" type="Marker2D" parent="."]
 position = Vector2(1280, 864)
 
+[node name="HUDCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="HUDCanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUDCanvasLayer/HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="Control" parent="HUDCanvasLayer/HUD/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="HUDCanvasLayer/HUD/HBoxContainer/Left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.611765, 0.184314, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUDCanvasLayer/HUD/HBoxContainer/Left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimeLabel" type="Label" parent="HUDCanvasLayer/HUD/HBoxContainer/Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TIME: 
+%d"
+
+[node name="Mid" type="Control" parent="HUDCanvasLayer/HUD/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.95
+
+[node name="Right" type="Control" parent="HUDCanvasLayer/HUD/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="HUDCanvasLayer/HUD/HBoxContainer/Right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.611765, 0.184314, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUDCanvasLayer/HUD/HBoxContainer/Right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
