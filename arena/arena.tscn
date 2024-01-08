@@ -7,7 +7,7 @@
 size = Vector2(1664, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvd6e"]
-size = Vector2(128, 992)
+size = Vector2(256, 992)
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_y3n6r")
@@ -27,11 +27,11 @@ position = Vector2(768, 928)
 shape = SubResource("RectangleShape2D_8ih4i")
 
 [node name="LeftRect" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-64, 432)
+position = Vector2(128, 432)
 shape = SubResource("RectangleShape2D_rvd6e")
 
 [node name="RightRect" type="CollisionShape2D" parent="Wall"]
-position = Vector2(1600, 432)
+position = Vector2(1408, 432)
 shape = SubResource("RectangleShape2D_rvd6e")
 
 [node name="Player" parent="." instance=ExtResource("1_abqlm")]
@@ -42,11 +42,11 @@ autostart = true
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="TopLeftSpawnMarker" type="Marker2D" parent="."]
-position = Vector2(128, 128)
+[node name="TopLeft" type="Marker2D" parent="."]
+position = Vector2(256, 0)
 
-[node name="BottomRightSpawnMarker" type="Marker2D" parent="."]
-position = Vector2(1408, 736)
+[node name="BottomRight" type="Marker2D" parent="."]
+position = Vector2(1280, 864)
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
