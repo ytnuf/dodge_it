@@ -5,6 +5,7 @@ extends Node2D
 var _elapsed := 0.0
 @onready var _bottom_right : Vector2 = $BottomRight.position
 @onready var _enemies := $Enemies
+@onready var _enemy_timer := $EnemyTimer
 @onready var _player : Player = $Player
 @onready var _time_label := $HUDCanvasLayer/HUD/HBoxContainer/Left/VBoxContainer/TimeLabel
 @onready var _top_left : Vector2 = $TopLeft.position
@@ -44,6 +45,8 @@ func _on_timer_timeout() -> void:
 	var spd := randf_range(8.0 * 32.0, 16.0 * 32.0)
 	var vel_ang := randf_range(-PI, PI)
 	enemy.linear_velocity = Vector2(spd, 0.0).rotated(vel_ang)
+
+	_enemy_timer.wait_time += 4.0
 
 
 func _on_player_died() -> void:

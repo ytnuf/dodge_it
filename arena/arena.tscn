@@ -37,7 +37,7 @@ shape = SubResource("RectangleShape2D_rvd6e")
 [node name="Player" parent="." instance=ExtResource("1_abqlm")]
 position = Vector2(768, 432)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="EnemyTimer" type="Timer" parent="."]
 autostart = true
 
 [node name="Enemies" type="Node" parent="."]
@@ -120,4 +120,4 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_timer_timeout"]
