@@ -13,6 +13,9 @@ func _ready() -> void:
 	$Polygon2D.scale *= rel_size
 
 
-func activate() -> void:
-	linear_velocity = init_vel
+func set_radius(radius: float) -> void:
+	$CollisionShape2D.shape.radius = radius
+	var default_radius : float = $Polygon2D.polygon[0].length()
+	assert(default_radius != 0.0)
+	$Polygon2D.scale *= radius / default_radius
 

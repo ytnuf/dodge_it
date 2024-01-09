@@ -26,23 +26,24 @@ func _on_timer_timeout() -> void:
 	const ENEMY_SCENE := preload("res://enemies/enemy.tscn")
 	var enemy : Enemy = ENEMY_SCENE.instantiate()
 
-	const MIN_SQ_DIST_FROM_PLAYER := 128.0 * 128.0
-	const MAX_ENEMY_SIZE := 64.0
+	var radius := randf_range(0.5 * 32.0, 2.5 * 32.0)
+	enemy.set_radius(radius)
+
 	var pos := _player.position
-	while pos.distance_squared_to(_player.position) <= MIN_SQ_DIST_FROM_PLAYER:
+	while pos.distance_squared_to(_player.position) <= radius * radius:
 		pos = Vector2(
-			randf_range(_top_left.x + MAX_ENEMY_SIZE, _bottom_right.x - MAX_ENEMY_SIZE),
-			randf_range(_top_left.y + MAX_ENEMY_SIZE, _bottom_right.y - MAX_ENEMY_SIZE),
+			randf_range(_top_left.x + radius, _bottom_right.x - radius),
+			randf_range(_top_left.y + radius, _bottom_right.y - radius),
 		)
 	enemy.position = pos
 
-	var spd := randf_range(4.0 * 32.0, 8.0 * 32.0)
-	var vel_ang := randf_range(-PI, PI)
-	enemy.init_vel = Vector2(spd, spd).rotated(vel_ang)
-
-	enemy.rel_size = randf_range(0.5, 2.0)
+	enemy.mass = randf_range(0.5, 4.0)
 
 	_enemies.add_child(enemy)
+
+	var spd := randf_range(8.0 * 32.0, 16.0 * 32.0)
+	var vel_ang := randf_range(-PI, PI)
+	enemy.linear_velocity = Vector2(spd, 0.0).rotated(vel_ang)
 
 
 func _on_player_died() -> void:
