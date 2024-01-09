@@ -90,8 +90,15 @@ grow_vertical = 2
 [node name="TimeLabel" type="Label" parent="HUDCanvasLayer/HUD/HBoxContainer/Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "TIME: 
-%d"
+text = "TIME: 0s"
+
+[node name="Label" type="Label" parent="HUDCanvasLayer/HUD/HBoxContainer/Left/VBoxContainer"]
+layout_mode = 2
+
+[node name="EnemyLabel" type="Label" parent="HUDCanvasLayer/HUD/HBoxContainer/Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "ENEMIES: 0"
 
 [node name="Mid" type="Control" parent="HUDCanvasLayer/HUD/HBoxContainer"]
 layout_mode = 2
