@@ -8,7 +8,8 @@ extends RigidBody2D
 
 func set_radius(radius: float) -> void:
 	$CollisionShape2D.shape.radius = radius
-	var default_radius : float = $Polygon2D.polygon[0].length()
+	var default_radius : float = $Sprite2D.texture.get_width() / 2.0
+	assert(is_equal_approx(default_radius * 2.0, $Sprite2D.texture.get_height() ) )
 	assert(default_radius != 0.0)
-	$Polygon2D.scale *= radius / default_radius
+	$Sprite2D.scale *= radius / default_radius
 
