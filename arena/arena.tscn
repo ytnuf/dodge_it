@@ -25,28 +25,19 @@ polygon = PackedVector2Array(0, 0, 1536, 0, 1536, 864, 0, 864)
 collision_layer = 4
 collision_mask = 0
 
-[node name="LeftColour" type="Polygon2D" parent="Wall"]
-color = Color(0.25098, 0.184314, 0.113725, 1)
-polygon = PackedVector2Array(32, -64, -192, -64, -192, 928, 32, 928)
-
-[node name="RightColour" type="Polygon2D" parent="Wall"]
-position = Vector2(1424, 0)
-color = Color(0.25098, 0.184314, 0.113725, 1)
-polygon = PackedVector2Array(112, -64, -176, -64, -176, 928, 112, 928)
-
-[node name="UpperColl" type="CollisionShape2D" parent="Wall"]
+[node name="UpperRect" type="CollisionShape2D" parent="Wall"]
 position = Vector2(768, -64)
 shape = SubResource("RectangleShape2D_8ih4i")
 
-[node name="LowerColl" type="CollisionShape2D" parent="Wall"]
+[node name="LowerRect" type="CollisionShape2D" parent="Wall"]
 position = Vector2(768, 928)
 shape = SubResource("RectangleShape2D_8ih4i")
 
-[node name="LeftColl" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-80, 432)
+[node name="LeftRect" type="CollisionShape2D" parent="Wall"]
+position = Vector2(-112, 432)
 shape = SubResource("RectangleShape2D_igbbh")
 
-[node name="RightColl" type="CollisionShape2D" parent="Wall"]
+[node name="RightRect" type="CollisionShape2D" parent="Wall"]
 position = Vector2(1392, 432)
 shape = SubResource("RectangleShape2D_g3fni")
 
@@ -59,89 +50,11 @@ autostart = true
 [node name="Enemies" type="Node" parent="."]
 
 [node name="TopLeft" type="Marker2D" parent="."]
-position = Vector2(32, 0)
 
 [node name="BottomRight" type="Marker2D" parent="."]
 position = Vector2(1248, 864)
 
 [node name="HUDCanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HUD" type="Control" parent="HUDCanvasLayer"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUDCanvasLayer/HUD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Left" type="Control" parent="HUDCanvasLayer/HUD/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ColorRect" type="ColorRect" parent="HUDCanvasLayer/HUD/HBoxContainer/Left"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.611765, 0.184314, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUDCanvasLayer/HUD/HBoxContainer/Left"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TimeLabel" type="Label" parent="HUDCanvasLayer/HUD/HBoxContainer/Left/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "TIME: 0s"
-
-[node name="Label" type="Label" parent="HUDCanvasLayer/HUD/HBoxContainer/Left/VBoxContainer"]
-layout_mode = 2
-
-[node name="EnemyLabel" type="Label" parent="HUDCanvasLayer/HUD/HBoxContainer/Left/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "ENEMIES: 0"
-
-[node name="Mid" type="Control" parent="HUDCanvasLayer/HUD/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 3.95
-
-[node name="Right" type="Control" parent="HUDCanvasLayer/HUD/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ColorRect" type="ColorRect" parent="HUDCanvasLayer/HUD/HBoxContainer/Right"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.611765, 0.184314, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUDCanvasLayer/HUD/HBoxContainer/Right"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_timer_timeout"]

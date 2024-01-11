@@ -2,14 +2,10 @@
 extends Node2D
 
 
-var _elapsed := 0.0
-var _enemy_count := 0
 @onready var _bottom_right : Vector2 = $BottomRight.position
 @onready var _enemies := $Enemies
-@onready var _enemy_label := $HUDCanvasLayer/HUD/HBoxContainer/Left/VBoxContainer/EnemyLabel
 @onready var _enemy_timer := $EnemyTimer
 @onready var _player : Player = $Player
-@onready var _time_label := $HUDCanvasLayer/HUD/HBoxContainer/Left/VBoxContainer/TimeLabel
 @onready var _top_left : Vector2 = $TopLeft.position
 
 
@@ -18,11 +14,6 @@ func _ready() -> void:
 	_player.arena_left = _top_left.x
 	_player.arena_right = _bottom_right.x
 	_player.arena_top = _top_left.y
-
-
-func _physics_process(dt: float) -> void:
-	_elapsed += dt
-	_time_label.text = "TIME: %ds" % _elapsed
 
 
 func _on_timer_timeout() -> void:
@@ -43,8 +34,6 @@ func _on_timer_timeout() -> void:
 	enemy.mass = randf_range(0.5, 4.0)
 
 	_enemies.add_child(enemy)
-	_enemy_count += 1
-	_enemy_label.text = "ENEMIES: %d" % _enemy_count
 
 	var spd := randf_range(8.0 * 32.0, 16.0 * 32.0)
 	var vel_ang := randf_range(-PI, PI)
