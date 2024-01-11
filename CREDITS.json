@@ -1,0 +1,16 @@
+{
+	"assets": [
+		{
+			"files": [
+				"res://player/blue_ball.png",
+				"res://enemies/red_ball.png"
+			],
+			"creator name": "GameArtForge",
+			"creator page": "https://opengameart.org/users/gameartforge",
+			"source name": "Billiard Balls - Set 01",
+			"source page": "https://opengameart.org/content/billiard-balls-set-01",
+			"license name": "CC-BY 3.0",
+			"license page": "https://creativecommons.org/licenses/by/3.0/legalcode.en"
+		}
+	]
+}
