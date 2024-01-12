@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq0wtrvtx747m"]
+[gd_scene load_steps=7 format=3 uid="uid://cq0wtrvtx747m"]
 
 [ext_resource type="PackedScene" uid="uid://b6e815kkamyfc" path="res://player/player.tscn" id="1_abqlm"]
 [ext_resource type="Script" path="res://arena/arena.gd" id="1_y3n6r"]
+[ext_resource type="AudioStream" uid="uid://bw7kp5o6rb8ur" path="res://arena/five_card_shuffle.ogg" id="3_qau1d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ih4i"]
 size = Vector2(1664, 128)
@@ -55,6 +56,10 @@ autostart = true
 position = Vector2(1248, 864)
 
 [node name="HUDCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qau1d")
+autoplay = true
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_timer_timeout"]
