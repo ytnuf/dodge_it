@@ -9,7 +9,40 @@
 			"creator page": "https://opengameart.org/users/gameartforge",
 			"source name": "Billiard Balls - Set 01",
 			"source page": "https://opengameart.org/content/billiard-balls-set-01",
-			"license name": "CC-BY 3.0",
+			"license name": "CC BY 3.0",
+			"license page": "https://creativecommons.org/licenses/by/3.0/legalcode.en"
+		},
+		{
+			"files": [
+				"res://sfx/wall_hit.ogg"
+			],
+			"creator name": "juskiddink",
+			"creator page": "https://freesound.org/people/juskiddink/",
+			"source name": "Billiard balls single hit-dry.wav",
+			"source page": "https://freesound.org/people/juskiddink/sounds/108615/",
+			"license name": "CC BY 4.0",
+			"license page": "https://creativecommons.org/licenses/by/4.0/legalcode.en"
+		},
+		{
+			"files": [
+				"res://sfx/billiard_collide.ogg"
+			],
+			"creator name": "Za-Games",
+			"creator page": "https://freesound.org/people/Za-Games/",
+			"source name": "billiard ball clack",
+			"source page": "https://freesound.org/people/Za-Games/sounds/539854/",
+			"license name": "CC0 1.0",
+			"license page": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.en"
+		},
+		{
+			"files": [
+				"res://arena/five_card_shuffle.ogg"
+			],
+			"creator name": "Kevin MacLeod",
+			"creator page": "https://incompetech.com/wordpress/",
+			"source name": "Five Card Shuffle",
+			"source page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100227",
+			"license name": "CC BY 3.0",
 			"license page": "https://creativecommons.org/licenses/by/3.0/legalcode.en"
 		}
 	]
