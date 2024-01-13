@@ -44,6 +44,18 @@
 			"source page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100227",
 			"license name": "CC BY 3.0",
 			"license page": "https://creativecommons.org/licenses/by/3.0/legalcode.en"
+		},
+		{
+			"files": [
+				"res://arena/board_texture.bmp",
+				"res://arena/wood_texture.bmp"
+			],
+			"creator name": "brightretro",
+			"creator page": "https://opengameart.org/users/brightretro",
+			"source name": "Pool Table 3D Model",
+			"source page": "https://opengameart.org/content/pool-table-3d-model",
+			"license name": "CC BY 3.0",
+			"license page": "https://creativecommons.org/licenses/by/3.0/legalcode.en"
 		}
 	]
 }
