@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://l3goseml5b7b"]
+[gd_scene load_steps=10 format=3 uid="uid://l3goseml5b7b"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_sc4t5"]
 [ext_resource type="Texture2D" uid="uid://b10e8rlgy4ta6" path="res://enemies/red_ball.png" id="2_s8coq"]
+[ext_resource type="AudioStream" uid="uid://dkpndfkyuwstr" path="res://enemies/billiard_collide.ogg" id="3_62lh3"]
+[ext_resource type="AudioStream" uid="uid://sceaptw0l3u" path="res://enemies/wall_hit.ogg" id="4_l1u0q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xrcam"]
 friction = 0.0
@@ -150,6 +152,8 @@ physics_material_override = SubResource("PhysicsMaterial_xrcam")
 gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
+max_contacts_reported = 4
+contact_monitor = true
 linear_damp_mode = 1
 angular_damp_mode = 1
 script = ExtResource("1_sc4t5")
@@ -165,3 +169,11 @@ libraries = {
 "": SubResource("AnimationLibrary_f7cgy")
 }
 autoplay = "fade_in"
+
+[node name="BilliardCollideSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_62lh3")
+
+[node name="WallHitSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_l1u0q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
