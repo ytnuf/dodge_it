@@ -5,6 +5,7 @@ extends Node2D
 @onready var _bottom_right : Vector2 = $BottomRight.position
 @onready var _enemies := $Enemies
 @onready var _enemy_timer := $EnemyTimer
+@onready var _hud : HUD = $HudCanvasLayer/HUD
 @onready var _player : Player = $Player
 @onready var _top_left : Vector2 = $TopLeft.position
 
@@ -34,6 +35,7 @@ func _on_timer_timeout() -> void:
 	enemy.mass = randf_range(0.5, 4.0)
 
 	_enemies.add_child(enemy)
+	_hud.increment_enemy()
 
 	var spd := randf_range(8.0 * 32.0, 16.0 * 32.0)
 	var vel_ang := randf_range(-PI, PI)

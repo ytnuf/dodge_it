@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq0wtrvtx747m"]
+[gd_scene load_steps=8 format=3 uid="uid://cq0wtrvtx747m"]
 
 [ext_resource type="PackedScene" uid="uid://b6e815kkamyfc" path="res://player/player.tscn" id="1_abqlm"]
 [ext_resource type="Script" path="res://arena/arena.gd" id="1_y3n6r"]
 [ext_resource type="AudioStream" uid="uid://bw7kp5o6rb8ur" path="res://arena/five_card_shuffle.ogg" id="3_qau1d"]
+[ext_resource type="PackedScene" uid="uid://cas5viryk4ag0" path="res://arena/hud.tscn" id="4_2vkb6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ih4i"]
 size = Vector2(1664, 128)
@@ -46,6 +47,7 @@ shape = SubResource("RectangleShape2D_g3fni")
 position = Vector2(768, 432)
 
 [node name="EnemyTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="Enemies" type="Node" parent="."]
@@ -55,11 +57,13 @@ autostart = true
 [node name="BottomRight" type="Marker2D" parent="."]
 position = Vector2(1248, 864)
 
-[node name="HUDCanvasLayer" type="CanvasLayer" parent="."]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qau1d")
 autoplay = true
+
+[node name="HudCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="HudCanvasLayer" instance=ExtResource("4_2vkb6")]
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_timer_timeout"]
