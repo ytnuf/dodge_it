@@ -14,7 +14,7 @@
 		},
 		{
 			"files": [
-				"res://sfx/wall_hit.ogg"
+				"res://enemies/wall_hit.ogg"
 			],
 			"creator name": "juskiddink",
 			"creator page": "https://freesound.org/people/juskiddink/",
@@ -25,7 +25,7 @@
 		},
 		{
 			"files": [
-				"res://sfx/billiard_collide.ogg"
+				"res://enemies/billiard_collide.ogg"
 			],
 			"creator name": "Za-Games",
 			"creator page": "https://freesound.org/people/Za-Games/",
