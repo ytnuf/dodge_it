@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq0wtrvtx747m"]
+[gd_scene load_steps=9 format=3 uid="uid://cq0wtrvtx747m"]
 
 [ext_resource type="PackedScene" uid="uid://b6e815kkamyfc" path="res://player/player.tscn" id="1_abqlm"]
 [ext_resource type="Script" path="res://arena/arena.gd" id="1_y3n6r"]
+[ext_resource type="Texture2D" uid="uid://dnghuuxd0rp6t" path="res://arena/board_texture.bmp" id="2_y8mg2"]
 [ext_resource type="AudioStream" uid="uid://bw7kp5o6rb8ur" path="res://arena/five_card_shuffle.ogg" id="3_qau1d"]
 [ext_resource type="PackedScene" uid="uid://cas5viryk4ag0" path="res://arena/hud.tscn" id="4_2vkb6"]
 
@@ -19,9 +20,10 @@ script = ExtResource("1_y3n6r")
 metadata/_edit_vertical_guides_ = [1536.0]
 metadata/_edit_horizontal_guides_ = [864.0]
 
-[node name="Background" type="Polygon2D" parent="."]
-color = Color(0.215686, 0.431373, 0, 1)
-polygon = PackedVector2Array(0, 0, 1536, 0, 1536, 864, 0, 864)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(624, 432)
+scale = Vector2(19.5, 13.5)
+texture = ExtResource("2_y8mg2")
 
 [node name="Wall" type="StaticBody2D" parent="."]
 collision_layer = 4
