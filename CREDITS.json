@@ -56,6 +56,17 @@
 			"source page": "https://opengameart.org/content/pool-table-3d-model",
 			"license name": "CC BY 3.0",
 			"license page": "https://creativecommons.org/licenses/by/3.0/legalcode.en"
+		},
+		{
+			"files": [
+				"res://menu/late_night_radio.ogg"
+			],
+			"creator name": "Kevin MacLeod",
+			"creator page": "https://incompetech.com/wordpress/",
+			"source name": "Late Night Radio",
+			"source page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2100003",
+			"license name": "CC BY 3.0",
+			"license page": "https://creativecommons.org/licenses/by/3.0/legalcode.en"
 		}
 	]
 }
