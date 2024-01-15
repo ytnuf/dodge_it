@@ -1,23 +1,23 @@
 
 class_name Player
-extends Area2D
+extends CharacterBody2D
 
 
 signal died
 
-var arena_bottom : float
-var arena_left : float
-var arena_right : float
-var arena_top : float
-@onready var _radius : float = $CollisionShape2D.shape.radius
-
 
 func _physics_process(_dt: float) -> void:
-	position = get_global_mouse_position()
+	var to_mouse := get_global_mouse_position() - position
+	var dist := to_mouse.length()
+	var dir := to_mouse.normalized()
+	var speed := dist * 32.0
+	velocity = dir * speed
+	move_and_slide()
 
-	position.x = clamp(arena_left + _radius, position.x, arena_right - _radius)
-	position.y = clamp(arena_top + _radius, position.y, arena_bottom - _radius)
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i)
+		var collider := collision.get_collider() as PhysicsBody2D
+		assert(collider != null)
+		if collider.get_collision_layer_value(2):
+			died.emit()
 
-
-func _on_hit() -> void:
-	died.emit()

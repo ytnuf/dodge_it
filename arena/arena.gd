@@ -16,13 +16,6 @@ func _unhandled_input(ev: InputEvent) -> void:
 		_pause_menu.activate(true)
 
 
-func _ready() -> void:
-	_player.arena_bottom = _bottom_right.y
-	_player.arena_left = _top_left.x
-	_player.arena_right = _bottom_right.x
-	_player.arena_top = _top_left.y
-
-
 func _on_timer_timeout() -> void:
 	const ENEMY_SCENE := preload("res://enemies/enemy.tscn")
 	var enemy : Enemy = ENEMY_SCENE.instantiate()
