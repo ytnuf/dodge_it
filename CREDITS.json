@@ -67,6 +67,28 @@
 			"source page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2100003",
 			"license name": "CC BY 3.0",
 			"license page": "https://creativecommons.org/licenses/by/3.0/legalcode.en"
+		},
+		{
+			"files": [
+				"res://arena/pause_on.ogg"
+			],
+			"creator name": "jens.enk",
+			"creator page": "https://freesound.org/people/jens.enk/",
+			"source name": "PauseOn.ogg",
+			"source page": "https://freesound.org/people/jens.enk/sounds/434610/",
+			"license name": "CC BY 3.0",
+			"license page": "https://creativecommons.org/licenses/by/3.0/legalcode.en"
+		},
+		{
+			"files": [
+				"res://arena/pause_off.ogg"
+			],
+			"creator name": "jens.enk",
+			"creator page": "https://freesound.org/people/jens.enk/",
+			"source name": "PauseOff.ogg",
+			"source page": "https://freesound.org/people/jens.enk/sounds/434611/",
+			"license name": "CC BY 3.0",
+			"license page": "https://creativecommons.org/licenses/by/3.0/legalcode.en"
 		}
 	]
 }
