@@ -6,8 +6,15 @@ extends Node2D
 @onready var _enemies := $Enemies
 @onready var _enemy_timer := $EnemyTimer
 @onready var _hud : HUD = $HudCanvasLayer/HUD
+@onready var _pause_menu := $PauseCanvasLayer/Pause
 @onready var _player : Player = $Player
 @onready var _top_left : Vector2 = $TopLeft.position
+
+
+func _unhandled_input(ev: InputEvent) -> void:
+	if ev.is_action_pressed("pause"):
+		_pause_menu.visible = true
+		get_tree().paused = true
 
 
 func _ready() -> void:

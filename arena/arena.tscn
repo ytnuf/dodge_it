@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cq0wtrvtx747m"]
+[gd_scene load_steps=10 format=3 uid="uid://cq0wtrvtx747m"]
 
 [ext_resource type="PackedScene" uid="uid://b6e815kkamyfc" path="res://player/player.tscn" id="1_abqlm"]
 [ext_resource type="Script" path="res://arena/arena.gd" id="1_y3n6r"]
 [ext_resource type="Texture2D" uid="uid://dnghuuxd0rp6t" path="res://arena/board_texture.bmp" id="2_y8mg2"]
 [ext_resource type="AudioStream" uid="uid://bw7kp5o6rb8ur" path="res://arena/five_card_shuffle.ogg" id="3_qau1d"]
 [ext_resource type="PackedScene" uid="uid://cas5viryk4ag0" path="res://arena/hud.tscn" id="4_2vkb6"]
+[ext_resource type="PackedScene" uid="uid://dpo25g8mn4dpt" path="res://arena/pause.tscn" id="6_v00ce"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ih4i"]
 size = Vector2(1664, 128)
@@ -66,6 +67,12 @@ autoplay = true
 [node name="HudCanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="HudCanvasLayer" instance=ExtResource("4_2vkb6")]
+
+[node name="PauseCanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Pause" parent="PauseCanvasLayer" instance=ExtResource("6_v00ce")]
+visible = false
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_timer_timeout"]
