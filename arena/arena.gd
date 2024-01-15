@@ -13,8 +13,7 @@ extends Node2D
 
 func _unhandled_input(ev: InputEvent) -> void:
 	if ev.is_action_pressed("pause"):
-		_pause_menu.visible = true
-		get_tree().paused = true
+		_pause_menu.activate(true)
 
 
 func _ready() -> void:

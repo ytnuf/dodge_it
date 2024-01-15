@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpo25g8mn4dpt"]
+[gd_scene load_steps=5 format=3 uid="uid://dpo25g8mn4dpt"]
 
 [ext_resource type="Script" path="res://arena/pause.gd" id="1_if3sq"]
+[ext_resource type="AudioStream" uid="uid://b8ut5lsxts71v" path="res://arena/pause_on.ogg" id="2_xspsv"]
+[ext_resource type="AudioStream" uid="uid://dt1jl215v55ue" path="res://arena/pause_off.ogg" id="3_64el8"]
 
 [sub_resource type="Theme" id="Theme_3c5tw"]
 default_font_size = 36
@@ -42,3 +44,11 @@ theme = SubResource("Theme_3c5tw")
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 text = "Paused!"
+
+[node name="PauseOnSfx" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_xspsv")
+
+[node name="PauseOffSfx" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_64el8")
