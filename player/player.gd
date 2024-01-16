@@ -14,10 +14,9 @@ func _physics_process(_dt: float) -> void:
 	velocity = dir * speed
 	move_and_slide()
 
-	for i in get_slide_collision_count():
-		var collision := get_slide_collision(i)
-		var collider := collision.get_collider() as PhysicsBody2D
-		assert(collider != null)
-		if collider.get_collision_layer_value(2):
-			died.emit()
 
+func _on_hurt_box_body_entered(body: Node2D) -> void:
+	var enemy := body as Enemy
+	assert(enemy != null)
+	assert(enemy.get_collision_layer_value(2) )
+	died.emit()
