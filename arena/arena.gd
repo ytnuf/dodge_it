@@ -11,9 +11,25 @@ extends Node2D
 @onready var _top_left : Vector2 = $TopLeft.position
 
 
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+
+
 func _unhandled_input(ev: InputEvent) -> void:
 	if ev.is_action_pressed("pause"):
 		_pause_menu.activate(true)
+
+
+func _on_hud_mouse_entered() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+func _on_hud_mouse_exited() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+
+
+func _on_player_died() -> void:
+	get_tree().paused = true
 
 
 func _on_timer_timeout() -> void:
@@ -41,7 +57,3 @@ func _on_timer_timeout() -> void:
 	enemy.linear_velocity = Vector2(spd, 0.0).rotated(vel_ang)
 
 	_enemy_timer.wait_time += 4.0
-
-
-func _on_player_died() -> void:
-	get_tree().paused = true

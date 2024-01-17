@@ -17,5 +17,7 @@ func activate(is_active: bool) -> void:
 	get_tree().paused = is_active
 	if is_active:
 		_pause_on.play()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		_pause_off.play()
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN

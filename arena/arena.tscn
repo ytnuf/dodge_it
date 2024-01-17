@@ -76,3 +76,5 @@ visible = false
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="HudCanvasLayer/HUD" to="." method="_on_hud_mouse_entered"]
+[connection signal="mouse_exited" from="HudCanvasLayer/HUD" to="." method="_on_hud_mouse_exited"]
