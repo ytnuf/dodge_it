@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://l3goseml5b7b"]
+[gd_scene load_steps=11 format=3 uid="uid://l3goseml5b7b"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_sc4t5"]
 [ext_resource type="Texture2D" uid="uid://b10e8rlgy4ta6" path="res://enemies/red_ball.png" id="2_s8coq"]
@@ -145,6 +145,10 @@ _data = {
 "fade_in": SubResource("Animation_jpe5j")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7goqa"]
+resource_local_to_scene = true
+radius = 40.0
+
 [node name="Enemy" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 6
@@ -175,5 +179,12 @@ stream = ExtResource("3_62lh3")
 
 [node name="WallHitSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_l1u0q")
+
+[node name="GrazeBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrazeBox"]
+shape = SubResource("CircleShape2D_7goqa")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

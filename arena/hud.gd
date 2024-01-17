@@ -6,6 +6,7 @@ extends Control
 var _enemy_count := 0
 var _elapsed := 0.0
 @onready var _enemy_label := $VBoxContainer/EnemyLabel
+@onready var _score_label := $VBoxContainer/ScoreLabel
 @onready var _time_label := $VBoxContainer/TimeLabel
 
 
@@ -17,3 +18,7 @@ func _process(dt: float) -> void:
 func increment_enemy() -> void:
 	_enemy_count += 1
 	_enemy_label.text = "ENEMY: %d" % _enemy_count
+
+
+func set_score(score: int) -> void:
+	_score_label.text = "SCORE: %d" % score

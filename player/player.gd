@@ -4,6 +4,10 @@ extends CharacterBody2D
 
 
 signal died
+signal grazed(points: int)
+
+var _current_graze := 0
+@onready var _graze_detector := $GrazeDetector
 
 
 func _physics_process(_dt: float) -> void:
@@ -15,8 +19,24 @@ func _physics_process(_dt: float) -> void:
 	move_and_slide()
 
 
+func _on_graze_timer_timeout() -> void:
+	grazed.emit(_current_graze)
+	_current_graze = 0
+	for area in _graze_detector.get_overlapping_areas():
+		var enemy := area.get_parent() as Enemy
+		assert(enemy != null)
+		_current_graze = max(_current_graze, enemy.graze_score() )
+
+
+func _on_graze_detector_area_entered(area: Area2D) -> void:
+	var enemy := area.get_parent() as Enemy
+	assert(enemy != null)
+	_current_graze = max(_current_graze, enemy.graze_score() )
+
+
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	var enemy := body as Enemy
 	assert(enemy != null)
 	assert(enemy.get_collision_layer_value(2) )
 	died.emit()
+

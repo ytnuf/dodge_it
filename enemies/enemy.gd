@@ -14,8 +14,12 @@ func set_radius(radius: float) -> void:
 	assert(is_equal_approx(default_radius * 2.0, $Sprite2D.texture.get_height() ) )
 	assert(default_radius != 0.0)
 	$Sprite2D.scale *= radius / default_radius
+	#grazing hitbox is slightly larger than actual hitbox
+	$GrazeBox/CollisionShape2D.shape.radius = radius * 1.6 + 16.0
 
 
+func graze_score() -> int:
+	return (int)(linear_velocity.length() )
 
 func _on_body_entered(node: Node) -> void:
 	var body := node as PhysicsBody2D

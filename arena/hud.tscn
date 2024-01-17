@@ -64,3 +64,7 @@ text = "TIME: 0"
 [node name="EnemyLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "ENEMY: 0"
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SCORE: 0"
