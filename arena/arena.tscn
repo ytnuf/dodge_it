@@ -14,16 +14,16 @@ size = Vector2(1664, 128)
 size = Vector2(224, 992)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3fni"]
-size = Vector2(288, 992)
+size = Vector2(352, 992)
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_y3n6r")
 metadata/_edit_vertical_guides_ = [1536.0]
 metadata/_edit_horizontal_guides_ = [864.0]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(624, 432)
-scale = Vector2(19.5, 13.5)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 432)
+scale = Vector2(18, 13)
 texture = ExtResource("2_y8mg2")
 
 [node name="Wall" type="StaticBody2D" parent="."]
@@ -31,15 +31,15 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="UpperRect" type="CollisionShape2D" parent="Wall"]
-position = Vector2(768, -64)
+position = Vector2(768, -48)
 shape = SubResource("RectangleShape2D_8ih4i")
 
 [node name="LowerRect" type="CollisionShape2D" parent="Wall"]
-position = Vector2(768, 928)
+position = Vector2(768, 912)
 shape = SubResource("RectangleShape2D_8ih4i")
 
 [node name="LeftRect" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-112, 432)
+position = Vector2(-48, 432)
 shape = SubResource("RectangleShape2D_igbbh")
 
 [node name="RightRect" type="CollisionShape2D" parent="Wall"]
@@ -56,15 +56,17 @@ autostart = true
 [node name="Enemies" type="Node" parent="."]
 
 [node name="TopLeft" type="Marker2D" parent="."]
+position = Vector2(64, 16)
 
 [node name="BottomRight" type="Marker2D" parent="."]
-position = Vector2(1248, 864)
+position = Vector2(1216, 848)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qau1d")
 autoplay = true
 
 [node name="HudCanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="HUD" parent="HudCanvasLayer" instance=ExtResource("4_2vkb6")]
 
