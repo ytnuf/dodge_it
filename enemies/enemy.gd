@@ -19,7 +19,7 @@ func set_radius(radius: float) -> void:
 
 
 func graze_score() -> int:
-	return (int)(linear_velocity.length() )
+	return ceil(linear_velocity.length()/16)
 
 func _on_body_entered(node: Node) -> void:
 	var body := node as PhysicsBody2D

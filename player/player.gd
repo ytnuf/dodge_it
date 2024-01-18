@@ -4,8 +4,8 @@ extends CharacterBody2D
 
 
 signal died
-signal grazed(points: int)
 
+var score := 0
 var _current_graze := 0
 @onready var _graze_detector := $GrazeDetector
 
@@ -20,7 +20,7 @@ func _physics_process(_dt: float) -> void:
 
 
 func _on_graze_timer_timeout() -> void:
-	grazed.emit(_current_graze)
+	score += _current_graze
 	_current_graze = 0
 	for area in _graze_detector.get_overlapping_areas():
 		var enemy := area.get_parent() as Enemy

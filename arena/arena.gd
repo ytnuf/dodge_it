@@ -2,7 +2,6 @@
 extends Node2D
 
 
-var score := 0.0
 @onready var _bottom_right : Vector2 = $BottomRight.position
 @onready var _enemies := $Enemies
 @onready var _enemy_timer := $EnemyTimer
@@ -16,9 +15,9 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 
-func _process(dt: float) -> void:
-	score += dt * 100
-	_hud.set_score(int(score) )
+func _physics_process(dt: float) -> void:
+	_player.score += ceil(dt * 100)
+	_hud.set_score(_player.score)
 
 
 func _unhandled_input(ev: InputEvent) -> void:
@@ -36,10 +35,6 @@ func _on_hud_mouse_exited() -> void:
 
 func _on_player_died() -> void:
 	get_tree().paused = true
-
-
-func _on_player_grazed(points: int) -> void:
-	score += points
 
 
 func _on_timer_timeout() -> void:
