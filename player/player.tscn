@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6e815kkamyfc"]
+[gd_scene load_steps=7 format=3 uid="uid://b6e815kkamyfc"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_esg6f"]
 [ext_resource type="Texture2D" uid="uid://cqv5ko1gkgwrs" path="res://player/blue_ball.png" id="2_3su77"]
+[ext_resource type="AudioStream" uid="uid://c6ts7nxgtr7ac" path="res://player/lose.ogg" id="3_u5l4x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iugcp"]
 radius = 32.0
@@ -41,6 +42,9 @@ shape = SubResource("CircleShape2D_gcn63")
 [node name="GrazeTimer" type="Timer" parent="."]
 wait_time = 0.125
 autostart = true
+
+[node name="LoseSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u5l4x")
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
 [connection signal="area_entered" from="GrazeDetector" to="." method="_on_graze_detector_area_entered"]

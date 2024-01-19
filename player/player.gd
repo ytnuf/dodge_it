@@ -8,6 +8,7 @@ signal died
 var score := 0
 var _current_graze := 0
 @onready var _graze_detector := $GrazeDetector
+@onready var _lose_sfx := $LoseSfx
 
 
 func _physics_process(_dt: float) -> void:
@@ -39,4 +40,5 @@ func _on_hurt_box_body_entered(body: Node2D) -> void:
 	assert(enemy != null)
 	assert(enemy.get_collision_layer_value(2) )
 	died.emit()
+	_lose_sfx.play()
 
