@@ -5,10 +5,13 @@ extends Node2D
 @onready var _bottom_right : Vector2 = $BottomRight.position
 @onready var _enemies := $Enemies
 @onready var _enemy_timer := $EnemyTimer
+@onready var _game_over_timer := $GameOverTimer
 @onready var _hud : HUD = $HudCanvasLayer/HUD
+@onready var _music := $AudioStreamPlayer
 @onready var _pause_menu := $PauseCanvasLayer/Pause
 @onready var _player : Player = $Player
 @onready var _top_left : Vector2 = $TopLeft.position
+@onready var _wall := $Wall
 
 
 func _ready() -> void:
@@ -25,6 +28,11 @@ func _unhandled_input(ev: InputEvent) -> void:
 		_pause_menu.activate(true)
 
 
+func _on_game_over_timer_timeout() -> void:
+	const GAME_OVER_SCENE := preload("res://menu/game_over.tscn")
+	get_tree().change_scene_to_packed(GAME_OVER_SCENE)
+
+
 func _on_hud_mouse_entered() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
@@ -34,7 +42,12 @@ func _on_hud_mouse_exited() -> void:
 
 
 func _on_player_died() -> void:
-	get_tree().paused = true
+	_enemy_timer.stop()
+	for enemy in _enemies.get_children():
+		enemy.fall()
+	_wall.collision_layer = 0
+	_game_over_timer.start()
+	_music.stop()
 
 
 func _on_timer_timeout() -> void:

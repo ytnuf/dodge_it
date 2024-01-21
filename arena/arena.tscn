@@ -76,7 +76,12 @@ process_mode = 3
 [node name="Pause" parent="PauseCanvasLayer" instance=ExtResource("6_v00ce")]
 visible = false
 
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="HudCanvasLayer/HUD" to="." method="_on_hud_mouse_entered"]
 [connection signal="mouse_exited" from="HudCanvasLayer/HUD" to="." method="_on_hud_mouse_exited"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

@@ -4,8 +4,20 @@ extends RigidBody2D
 
 
 @export var init_vel := Vector2(32, 32)
+@onready var _anim := $AnimationPlayer
 @onready var _billiard_collide := $BilliardCollideSfx
 @onready var _wall_hit := $WallHitSfx
+
+
+func fall() -> void:
+	if _anim.current_animation == "fade_in":
+		await _anim.animation_finished
+		print("HERE")
+	gravity_scale = 1.0
+
+
+func graze_score() -> int:
+	return ceil(linear_velocity.length()/16)
 
 
 func set_radius(radius: float) -> void:
@@ -17,9 +29,6 @@ func set_radius(radius: float) -> void:
 	#grazing hitbox is slightly larger than actual hitbox
 	$GrazeBox/CollisionShape2D.shape.radius = radius * 1.6 + 16.0
 
-
-func graze_score() -> int:
-	return ceil(linear_velocity.length()/16)
 
 func _on_body_entered(node: Node) -> void:
 	var body := node as PhysicsBody2D
