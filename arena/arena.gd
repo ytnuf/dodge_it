@@ -29,6 +29,7 @@ func _unhandled_input(ev: InputEvent) -> void:
 
 
 func _on_game_over_timer_timeout() -> void:
+	Score.latest = _player.score
 	const GAME_OVER_SCENE := preload("res://menu/game_over.tscn")
 	get_tree().change_scene_to_packed(GAME_OVER_SCENE)
 
