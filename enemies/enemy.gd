@@ -12,7 +12,6 @@ extends RigidBody2D
 func fall() -> void:
 	if _anim.current_animation == "fade_in":
 		await _anim.animation_finished
-		print("HERE")
 	gravity_scale = 1.0
 
 

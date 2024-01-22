@@ -3,10 +3,7 @@ extends Control
 
 
 func _ready() -> void:
-	print(Input.mouse_mode)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	print(Input.mouse_mode)
-	print(Input.MOUSE_MODE_VISIBLE)
 	var new_best := Score.latest > Score.best
 	if new_best:
 		Score.best = Score.latest

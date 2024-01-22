@@ -18,9 +18,9 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 
-func _physics_process(dt: float) -> void:
-	_player.score += ceil(dt * 100)
+func _physics_process(_dt: float) -> void:
 	_hud.set_score(_player.score)
+	_hud.set_time(_player.survived_time as int)
 
 
 func _unhandled_input(ev: InputEvent) -> void:

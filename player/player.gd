@@ -6,6 +6,7 @@ extends CharacterBody2D
 signal died
 
 var score := 0
+var survived_time := 0.0
 var _current_graze := 0
 var _is_alive := true
 @onready var _graze_detector := $GrazeDetector
@@ -19,6 +20,9 @@ func _physics_process(dt: float) -> void:
 		var dir := to_mouse.normalized()
 		var speed := dist * 32.0
 		velocity = dir * speed
+
+		score += ceil(dt * 100)
+		survived_time += dt
 	else:
 		var acc := 980.0
 		velocity.y += acc * dt
