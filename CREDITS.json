@@ -100,6 +100,17 @@
 			"source page": "https://freesound.org/people/suntemple/sounds/253174/",
 			"license name": "CC0 1.0",
 			"license page": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.en"
+		},
+		{
+			"files": [
+				"res://ui/hand_serif.ttf"
+			],
+			"creator name": "Gerhard Großmann",
+			"creator page": "https://charakterziffer.github.io",
+			"source name": "Handserif",
+			"source page": "https://www.dafont.com/handserif.font",
+			"license name": "OFL",
+			"license page": "https://openfontlicense.org/open-font-license-official-text"
 		}
 	]
 }
