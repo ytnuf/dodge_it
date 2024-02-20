@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://brtvohdse4qye"]
+
+[ext_resource type="FontFile" uid="uid://dv30ec56v64dx" path="res://ui/hand_serif.ttf" id="1_d8mmy"]
+
+[resource]
+default_font = ExtResource("1_d8mmy")
