@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckk2d7ogdbl1f"]
+[gd_scene load_steps=5 format=3 uid="uid://ckk2d7ogdbl1f"]
 
 [ext_resource type="Theme" uid="uid://brtvohdse4qye" path="res://ui/ui_theme.tres" id="1_dnfte"]
 [ext_resource type="Script" path="res://menu/main_menu.gd" id="1_edved"]
 [ext_resource type="AudioStream" uid="uid://b4mr3ie6odwtb" path="res://menu/late_night_radio.ogg" id="2_y48rd"]
+[ext_resource type="Texture2D" uid="uid://bu8cvi18pg6mk" path="res://ui/logo.png" id="4_3wgj0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -34,15 +35,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -189.0
+offset_top = -310.0
+offset_right = 178.0
+offset_bottom = 227.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_3wgj0")
+
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 10
 text = "Start Game!"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
