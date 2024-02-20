@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cas5viryk4ag0"]
+[gd_scene load_steps=5 format=3 uid="uid://cas5viryk4ag0"]
 
 [ext_resource type="Script" path="res://arena/hud.gd" id="1_aniup"]
+[ext_resource type="Theme" uid="uid://brtvohdse4qye" path="res://ui/ui_theme.tres" id="1_enxj5"]
 [ext_resource type="Texture2D" uid="uid://b8bumgr0xx01k" path="res://arena/wood_texture.bmp" id="2_bfeao"]
 
 [sub_resource type="Theme" id="Theme_5on5m"]
@@ -15,6 +16,7 @@ anchor_bottom = 1.0
 offset_left = -320.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("1_enxj5")
 script = ExtResource("1_aniup")
 metadata/_edit_vertical_guides_ = [1536.0, 1216.0]
 metadata/_edit_horizontal_guides_ = [864.0]
@@ -24,7 +26,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1248.0
+offset_left = -1216.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -53,18 +55,24 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 128.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_5on5m")
+theme_override_constants/separation = 15
 
 [node name="TimeLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "TIME: 0"
+text = "TIME:  0"
+horizontal_alignment = 1
 
 [node name="EnemyLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "ENEMY: 0"
+text = "ENEMY:  0"
+horizontal_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "SCORE: 0"
+text = "SCORE:  0"
+horizontal_alignment = 1
