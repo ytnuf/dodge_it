@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dinbuhj6dwpd5"]
+[gd_scene load_steps=4 format=3 uid="uid://dinbuhj6dwpd5"]
 
 [ext_resource type="Script" path="res://menu/game_over.gd" id="1_voeuq"]
 [ext_resource type="Theme" uid="uid://brtvohdse4qye" path="res://ui/ui_theme.tres" id="1_vxgob"]
+[ext_resource type="AudioStream" uid="uid://b4mr3ie6odwtb" path="res://menu/late_night_radio.ogg" id="3_jhd3n"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -12,6 +13,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_vxgob")
 script = ExtResource("1_voeuq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.286275, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jhd3n")
+autoplay = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
