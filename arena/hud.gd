@@ -11,7 +11,7 @@ var _enemy_count := 0
 
 func increment_enemy() -> void:
 	_enemy_count += 1
-	_enemy_label.text = "ENEMY:  %d" % _enemy_count
+	_enemy_label.text = "ENEMIES:  %d" % _enemy_count
 
 
 func set_score(score: int) -> void:
