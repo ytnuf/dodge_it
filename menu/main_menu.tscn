@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckk2d7ogdbl1f"]
+[gd_scene load_steps=4 format=3 uid="uid://ckk2d7ogdbl1f"]
 
+[ext_resource type="Theme" uid="uid://brtvohdse4qye" path="res://ui/ui_theme.tres" id="1_dnfte"]
 [ext_resource type="Script" path="res://menu/main_menu.gd" id="1_edved"]
 [ext_resource type="AudioStream" uid="uid://b4mr3ie6odwtb" path="res://menu/late_night_radio.ogg" id="2_y48rd"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_dnfte")
 script = ExtResource("1_edved")
 
 [node name="ColorRect" type="ColorRect" parent="."]

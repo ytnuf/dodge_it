@@ -1,18 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dinbuhj6dwpd5"]
+[gd_scene load_steps=3 format=3 uid="uid://dinbuhj6dwpd5"]
 
 [ext_resource type="Script" path="res://menu/game_over.gd" id="1_voeuq"]
+[ext_resource type="Theme" uid="uid://brtvohdse4qye" path="res://ui/ui_theme.tres" id="1_vxgob"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 26.0
-offset_top = -86.0
-offset_right = 26.0
-offset_bottom = -86.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_vxgob")
 script = ExtResource("1_voeuq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
