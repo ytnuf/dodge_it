@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8bumgr0xx01k"
-path="res://.godot/imported/wood_texture.bmp-388bf2aa5da93e1a11d0d101caf8b81e.ctex"
+uid="uid://7a1fw463gcxv"
+path="res://.godot/imported/board_texture.png-82ee3ef37695daf62c527c890fc1cc82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arena/wood_texture.bmp"
-dest_files=["res://.godot/imported/wood_texture.bmp-388bf2aa5da93e1a11d0d101caf8b81e.ctex"]
+source_file="res://arena/board_texture.png"
+dest_files=["res://.godot/imported/board_texture.png-82ee3ef37695daf62c527c890fc1cc82.ctex"]
 
 [params]
 
