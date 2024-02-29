@@ -11,6 +11,9 @@ func _ready() -> void:
 	$VBoxContainer/ScoreLabel.text = "Your Score: %d" % Score.latest
 	$VBoxContainer/BestLabel.text = "Best Score: %d" % Score.best
 
+	if OS.get_name() == &"Web":
+		$VBoxContainer/QuitButton.visible = false
+
 
 func _on_main_menu_button_pressed() -> void:
 	var MAIN_MENU_SCENE := load("res://menu/main_menu.tscn")
