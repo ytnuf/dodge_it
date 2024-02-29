@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Dodge It!"
+config/name="dodge_it"
 run/main_scene="res://menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://player/blue_ball.png"
 
 [autoload]
 
